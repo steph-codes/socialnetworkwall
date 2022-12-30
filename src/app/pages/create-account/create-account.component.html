@@ -1,29 +1,37 @@
 <div class="container">
   <div class="form-container">
-     <div class="title">Create Acount</div>
-     <form>
+    <div class="title">Create Account</div>
+    <form [formGroup]="createAccountForm">
       <mat-form-field appearance="outline">
         <mat-label>Enter your email</mat-label>
-        <input matInput />
+        <input matInput formControlName="email"/>
+        <mat-error *ngIf="createAccountForm.controls.email.invalid">
+          {{ createAccountForm.controls.email.hasError('required') ?'Email is required' : 'Please Enter a Valid Email'}}
+        </mat-error>
       </mat-form-field>
-
       <mat-form-field appearance="outline">
-        <mat-label>Enter your Username</mat-label>
-        <input matInput />
+        <mat-label>Enter your username</mat-label>
+        <input matInput formControlName="username" />
+        <mat-error *ngIf="createAccountForm.controls.username.invalid">
+          {{ createAccountForm.controls.email.hasError('required') ?'Username is required' : 'Please Enter a Valid Email'}}
+        </mat-error>
       </mat-form-field>
-
       <mat-form-field appearance="outline">
         <mat-label>Enter your password</mat-label>
-        <input type="password" matInput />
+        <input type="password" matInput formControlName="password" />
+        <mat-error *ngIf="createAccountForm.controls.password.invalid">
+          {{ createAccountForm.controls.password.hasError('required') ?'Password is required' : 'Password should be atleast 6 characters'}}
+        </mat-error>
       </mat-form-field>
-     </form>
-     <div class="buttons-container">
-      <button mat-raised-button color="primary" class="login-button">
-          Create Account
-      </button>
+    </form>
+
+    <!---- converts the input params into json
+    {{ createAccountForm.value | json}} -->
+
+    <div class="buttons-container">
+      <button mat-raised-button class="login-button">CreateAccount </button>
       <p>OR</p>
-      <button mat-button>
-        Login
-      </button>
+      <button routerLink="/login" mat-button>Login</button>
+    </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-account',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class CreateAccountComponent {
 
+    constructor(private fb:FormBuilder){
+
+    }
+
+    createAccountForm = this.fb.group({
+      email : ['',[Validators.required, Validators.email]],
+      username : ['',[Validators.required, Validators.maxLength(10)]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
 }
