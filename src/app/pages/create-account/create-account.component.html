@@ -29,7 +29,9 @@
     {{ createAccountForm.value | json}} -->
 
     <div class="buttons-container">
-      <button mat-raised-button class="login-button">CreateAccount </button>
+      <button mat-raised-button [disabled]="createAccountForm.invalid" (click)="create()"class="login-button">
+        CreateAccount
+      </button>
       <p>OR</p>
       <button routerLink="/login" mat-button>Login</button>
     </div>

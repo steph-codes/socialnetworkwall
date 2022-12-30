@@ -1,4 +1,11 @@
 {
-    "users": [],
-    "posts": []
+  "users": [
+    {
+      "email": "ogundele370@gmail.com",
+      "username": "stephcodes",
+      "password": "Password123_",
+      "id": 1
+    }
+  ],
+  "posts": []
 }
