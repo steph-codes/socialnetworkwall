@@ -10,9 +10,11 @@ import { LoginComponent } from './pages/login/login.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import {CreateAccountComponent } from './pages/create-account/create-account.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {HttpClientModule} from '@angular/common/http'
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
