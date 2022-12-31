@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class CreateAccountComponent {
 
-    constructor(private fb:FormBuilder, public userService:UserService){
+    constructor(private fb:FormBuilder, public userService:UserService, private router:Router){
 
     }
 
@@ -23,10 +24,12 @@ export class CreateAccountComponent {
       //console.log(this.createAccountForm.value);
       this.userService.createNewUser(this.createAccountForm.value).then((res)=>{
         console.log(res);
+        this.userService.user = res;
+        this.router.navigate(['/posts']);
       }).catch((err)=>{
         console.log(err);
       });
     }
 
-    
+
 }

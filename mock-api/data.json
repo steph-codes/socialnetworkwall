@@ -5,6 +5,12 @@
       "username": "stephcodes",
       "password": "Password123_",
       "id": 1
+    },
+    {
+      "email": "john@gmail.com",
+      "username": "john",
+      "password": "John123_",
+      "id": 2
     }
   ],
   "posts": []

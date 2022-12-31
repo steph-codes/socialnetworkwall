@@ -19,3 +19,12 @@
     padding: 10px;
     padding-left: 20px;
 }
+
+.account {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    padding-right: 20px;
+}
