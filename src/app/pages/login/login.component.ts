@@ -38,7 +38,9 @@ export class LoginComponent implements OnInit{
           if(res[0].password === this.loginForm.value.password){
             console.log("matched");
             this.snackbar.open('Login successful','ok');
+            //asign value to user with user details so user isnt empty
             this.userService.user = res[0];
+            localStorage.setItem('user', JSON.stringify(res[0]));
             this.router.navigate(['/posts']);
           }else{
             console.log("Incorrect Password");

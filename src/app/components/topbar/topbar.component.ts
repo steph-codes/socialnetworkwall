@@ -14,6 +14,8 @@ export class TopbarComponent {
 
   logout(){
     this.userService.user = undefined;
+    //this way the stored data is cleared
+    localStorage.clear();
     this.router.navigate(['/login']);
 
   }
