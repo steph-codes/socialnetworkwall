@@ -20,7 +20,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
-
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 
 @NgModule({
@@ -45,7 +46,9 @@ import { environment } from 'src/environments/environment';
     MatIconModule,
     MatMenuModule,
     MatCardModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MaterialFileInputModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

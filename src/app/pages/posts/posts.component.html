@@ -4,12 +4,13 @@
       <textarea  matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Say something..."></textarea>
     </mat-form-field>
     <div class="new-post-actions-container">
-      <button mat-raised-button class="post-button">Post</button>
+      <button (click)="post()"mat-raised-button class="post-button">Post</button>
 
       <mat-form-field class="image-button">
-        <button mat-icon-button matSuffix >
-          <mat-icon>clear</mat-icon>
-        </button>
+        <ngx-mat-file-input class="image-input" #removableInput placeholder="Upload image" (change)="onFileSelected($event)"></ngx-mat-file-input>
+          <button mat-icon-button matSuffix *ngIf="!removableInput.empty" (click)="removableInput.clear($event)">
+            <mat-icon>clear</mat-icon>
+          </button>
       </mat-form-field>
     </div>
 
