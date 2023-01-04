@@ -7,7 +7,7 @@
       <button (click)="post()"mat-raised-button class="post-button">Post</button>
 
       <mat-form-field class="image-button">
-        <ngx-mat-file-input class="image-input" #removableInput placeholder="Upload image" (change)="onFileSelected($event)"></ngx-mat-file-input>
+        <ngx-mat-file-input class="image-input" #removableInput placeholder="Upload image.." (change)="onFileSelected($event)"></ngx-mat-file-input>
           <button mat-icon-button matSuffix *ngIf="!removableInput.empty" (click)="removableInput.clear($event)">
             <mat-icon>clear</mat-icon>
           </button>
@@ -22,7 +22,9 @@
       </mat-card-header>
       <img src="assets/sample.jpg" alt="image" mat-card-image>
       <mat-card-content>
+      <br> <br/>
         <p>
+
           Enjoying It
         </p>
       </mat-card-content>

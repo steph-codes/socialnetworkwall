@@ -46,6 +46,10 @@
     margin-bottom: 10px;
 }
 
+.comments-container {
+    padding-left: 15px;
+}
+
 mat-card-content {
     font-size: 18px;
 }
