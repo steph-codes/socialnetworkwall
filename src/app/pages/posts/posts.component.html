@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content-wrapper">
     <mat-form-field appearance="fill">
-      <textarea  matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Say something..."></textarea>
+      <textarea [(ngModel)]="text" matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Say something..."></textarea>
     </mat-form-field>
     <div class="new-post-actions-container">
       <button (click)="post()"mat-raised-button class="post-button">Post</button>
@@ -13,11 +13,11 @@
           </button>
       </mat-form-field>
     </div>
-
-    <mat-card class="post-card">
+    <!-- post.reverse will order the loop in descending order starts from the latest uploaded post-->
+    <mat-card class="post-card" *ngFor="let post of posts.reverse(); let i = index">
       <mat-card-header>
         <mat-card-title>
-         Tunde
+         {{post.username}}
         </mat-card-title>
       </mat-card-header>
       <img src="assets/sample.jpg" alt="image" mat-card-image>
@@ -25,7 +25,7 @@
       <br> <br/>
         <p>
 
-          Enjoying It
+          {{post.text}}
         </p>
       </mat-card-content>
       <mat-card-actions>
@@ -38,7 +38,7 @@
           <div class="title">
             Comments
           </div>
-          <p><b>Tunde:</b>Wow! Loved it</p>
+          <p *ngFor="let comment of post.comments"><b>{{comment.username}}:</b> {{comment.comment}}</p>
         </div>
         <div class="comment-input">
           <mat-form-field class="comment-form-field" >
