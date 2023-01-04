@@ -44,6 +44,14 @@ export class PostsComponent implements OnInit{
 
   text= "";
 
+  postSchema = {
+    username :'',
+    imageURL:'',
+    text:'',
+    likes:[],
+    comments:[{username:'', comment:''}]
+  }
+
   posts:Array<any> = [];
   commentText:Array<string> = [];
 
@@ -141,14 +149,20 @@ export class PostsComponent implements OnInit{
     });
   }
 
-
-  postSchema = {
-    username :'',
-    imageURL:'',
-    text:'',
-    likes:[],
-    comments:[{username:'', comment:''}]
+  comment(postId:any, commentIndex:any){
+    for(let i = 0; i < this.posts.length; i++){
+      if(this.posts[i].id == postId){
+        let commentObj = {
+          username: this.userService.user.username,
+          comment: this.commentText[commentIndex]
+        };
+        this.posts[i].comments.push(commentObj);
+        this.commentText[commentIndex] = "";
+        this.postService.updateComments(this.posts[i]);
+      }
+    }
   }
+
 
 
 

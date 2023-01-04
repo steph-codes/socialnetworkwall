@@ -49,4 +49,17 @@ export class PostService {
       );
     });
   }
+
+  updateComments(postObj:any){
+    return new Promise((resolve, reject)=>{
+      this.http.put('http://localhost:3000/posts/' + postObj.id, postObj).subscribe(
+        (res)=>{
+          resolve(res);
+        },
+        (err)=>{
+          reject(err);
+        }
+      );
+    });
+  }
 }

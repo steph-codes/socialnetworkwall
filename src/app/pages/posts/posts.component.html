@@ -42,9 +42,9 @@
         </div>
         <div class="comment-input">
           <mat-form-field class="comment-form-field" >
-            <input matInput type="text" placeholder="Add a comment">
+            <input [(ngModel)]="commentText[i]" matInput type="text" placeholder="Add a comment">
           </mat-form-field>
-          <button  class="comment-button" mat-button>Comment</button>
+          <button (click)="comment(post.id, i)" class="comment-button" mat-button>Comment</button>
         </div>
       </div>
     </mat-card>
