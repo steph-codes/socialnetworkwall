@@ -13,5 +13,13 @@
       "id": 2
     }
   ],
-  "posts": []
+  "posts": [
+    {
+      "text": "My Landscape Post",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/sbook-3a36d.appspot.com/o/images%2F1672869764880?alt=media&token=e76f248e-d397-47b6-8479-84fc5e8cdc32",
+      "likes": [],
+      "comments": [],
+      "id": 1
+    }
+  ]
 }
