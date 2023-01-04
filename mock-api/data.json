@@ -20,6 +20,13 @@
       "likes": [],
       "comments": [],
       "id": 1
+    },
+    {
+      "text": "A Sunset View",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/sbook-3a36d.appspot.com/o/images%2F1672869971149?alt=media&token=ffcef30e-0a69-487c-8fc7-08ce99ec600f",
+      "likes": [],
+      "comments": [],
+      "id": 2
     }
   ]
 }
