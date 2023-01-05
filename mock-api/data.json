@@ -11,21 +11,57 @@
       "username": "john",
       "password": "John123_",
       "id": 2
+    },
+    {
+      "email": "test@test.com",
+      "username": "Ade",
+      "password": "Test123_",
+      "id": 3
     }
   ],
   "posts": [
     {
-      "text": "My Landscape Post",
-      "imageURL": "https://firebasestorage.googleapis.com/v0/b/sbook-3a36d.appspot.com/o/images%2F1672869764880?alt=media&token=e76f248e-d397-47b6-8479-84fc5e8cdc32",
-      "likes": [],
-      "comments": [],
+      "username": "stephcodes",
+      "text": "Sunset Landscape in the Savanna",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/sbook-3a36d.appspot.com/o/images%2F1672881634379?alt=media&token=4236cc9f-b866-44a5-b5f8-d639416dc7d5",
+      "likes": [
+        2,
+        1
+      ],
+      "comments": [
+        {
+          "username": "stephcodes",
+          "comment": "wooow!!"
+        },
+        {
+          "username": "john",
+          "comment": "incredible!!!!!!! 😍😍"
+        }
+      ],
       "id": 1
     },
     {
-      "text": "A Sunset View",
-      "imageURL": "https://firebasestorage.googleapis.com/v0/b/sbook-3a36d.appspot.com/o/images%2F1672869971149?alt=media&token=ffcef30e-0a69-487c-8fc7-08ce99ec600f",
-      "likes": [],
-      "comments": [],
+      "username": "john",
+      "text": "Wav Surfing Surface",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/sbook-3a36d.appspot.com/o/images%2F1672881683766?alt=media&token=36c3f0a0-13df-4a0d-acae-29c6beac9dad",
+      "likes": [
+        1,
+        2
+      ],
+      "comments": [
+        {
+          "username": "john",
+          "comment": "neat"
+        },
+        {
+          "username": "stephcodes",
+          "comment": "love it"
+        },
+        {
+          "username": "john",
+          "comment": "🙌🙌👍💕"
+        }
+      ],
       "id": 2
     }
   ]

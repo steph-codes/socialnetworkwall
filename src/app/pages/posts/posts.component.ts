@@ -14,13 +14,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PostsComponent implements OnInit{
 
-    constructor(public userService: UserService, private router:Router, private storage:AngularFireStorage, public postService:PostService,private snackbar:MatSnackBar){
+    constructor(public userService:UserService, private router:Router, private storage:AngularFireStorage, public postService:PostService,private snackbar:MatSnackBar){
 
     }
     //upon initialization of component/ constructor run the below, if the user property in services is null means user hasnt logged in
   ngOnInit(): void {
-    if (this.userService.user = undefined || this.userService.user == null){
-      this.router.navigate(['/login']);
+    if (this.userService.user == undefined || this.userService.user == null){
+
       let str = localStorage.getItem('user');
       if(str != null){
         this.userService.user = JSON.parse(str);
@@ -44,14 +44,6 @@ export class PostsComponent implements OnInit{
 
   text= "";
 
-  postSchema = {
-    username :'',
-    imageURL:'',
-    text:'',
-    likes:[],
-    comments:[{username:'', comment:''}]
-  }
-
   posts:Array<any> = [];
   commentText:Array<string> = [];
 
@@ -73,6 +65,7 @@ export class PostsComponent implements OnInit{
           likes: [],
           comments:[]
         };
+        console.log(this.userService.user.username);
         this.posts.push(postObj);
         this.postService.saveNewPost(postObj).then((res)=>{
           console.log(res);
@@ -109,6 +102,7 @@ export class PostsComponent implements OnInit{
     for(let i = 0; i < this.posts.length; i++){
       if(this.posts[i].id == postId){
         if(this.posts[i].likes.indexOf(this.userService.user.id) >= 0){
+          // splice removes the userid from the likes array
           this.posts[i].likes.splice(this.posts[i].likes.indexOf(this.userService.user.id), 1);
         }
         else{
@@ -163,7 +157,13 @@ export class PostsComponent implements OnInit{
     }
   }
 
-
+  postSchema = {
+    username :'',
+    imageURL:'',
+    text:'',
+    likes:[],
+    comments:[{username:'', comment:''}]
+  }
 
 
 }
